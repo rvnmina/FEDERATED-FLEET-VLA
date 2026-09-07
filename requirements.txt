@@ -1,0 +1,27 @@
+# Core scientific stack
+numpy>=1.26,<2.0
+scipy>=1.11
+matplotlib>=3.8
+pandas>=2.1
+
+# Deep learning
+torch>=2.3
+torchvision>=0.18
+
+# Robotics simulation
+mujoco>=3.9
+robosuite>=1.5.2
+gymnasium>=0.29
+
+# Policy — SmolVLA via LeRobot
+lerobot @ git+https://github.com/huggingface/lerobot.git
+transformers>=4.41
+huggingface_hub>=0.23
+
+# Experiment tracking
+wandb>=0.17
+pyyaml>=6.0
+
+# Testing / lint
+pytest>=8.0
+ruff>=0.4

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Testing / linting
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Data & artefacts (large / private)
+data/
+!data/README.md
+results/
+!results/README.md
+checkpoints/
+wandb/
+mlruns/
+*.pt
+*.pth
+*.onnx
+*.ckpt
+
+# LaTeX aux
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls

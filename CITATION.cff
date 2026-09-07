@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: Federated Fleet Learning for Embodied Agents under IoT Constraints
+message: >-
+  If you use this software, please cite it as below.
+type: software
+authors:
+  - given-names: Ravindra
+    family-names: Mina
+    affiliation: Indian Institute of Technology Kharagpur
+    orcid: null
+repository-code: https://github.com/rvnmina/federated-fleet-vla-iot
+license: MIT
+version: 0.1.0-alpha
+date-released: 2026-09-08
