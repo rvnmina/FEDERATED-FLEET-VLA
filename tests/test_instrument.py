@@ -2,7 +2,7 @@ import json
 
 import torch
 
-from src.utils.instrument import (
+from src.utils.run_logger import (
     RunLogger,
     payload_bytes,
     state_delta,
