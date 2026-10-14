@@ -1,0 +1,4 @@
+# Install with: pip install --no-deps -r requirements-sim.txt
+# (see the note at the top of requirements.txt)
+robosuite==1.5.2
+mink==0.0.5

@@ -1,27 +1,39 @@
+# Pinned for reproducibility (Python 3.12, tested on CPU).
+# Install in two steps -- see README "Setup":
+#   pip install -r requirements.txt
+#   pip install --no-deps -r requirements-sim.txt
+#
+# Why two steps: robosuite 1.5.2 hard-pins mink==0.0.5, which declares
+# numpy<2, while lerobot>=0.5 requires numpy>=2. mink only backs robosuite's
+# GR1 whole-body IK (unused here); Lift/Stack/Door/NutAssembly on Panda run
+# fine on numpy 2.2. Installing robosuite with --no-deps sidesteps the
+# resolver conflict without changing any code path we use.
+
 # Core scientific stack
-numpy>=1.26,<2.0
-scipy>=1.11
-matplotlib>=3.8
-pandas>=2.1
+numpy==2.2.6
+scipy==1.18.1
+pyyaml==6.0.3
+psutil==7.2.2
 
-# Deep learning
-torch>=2.3
-torchvision>=0.18
+# Deep learning (PyPI wheels; native arm64 build on Apple Silicon)
+torch==2.11.0
+torchvision==0.26.0
 
-# Robotics simulation
-mujoco>=3.9
-robosuite>=1.5.2
-gymnasium>=0.29
+# Policy: SmolVLA via LeRobot
+lerobot[smolvla,dataset]==0.6.1
+transformers==5.5.4
 
-# Policy — SmolVLA via LeRobot
-lerobot @ git+https://github.com/huggingface/lerobot.git
-transformers>=4.41
-huggingface_hub>=0.23
-
-# Experiment tracking
-wandb>=0.17
-pyyaml>=6.0
+# Simulation (robosuite itself is in requirements-sim.txt)
+mujoco==3.9.0
+gymnasium==1.4.0
+# robosuite 1.5.2 runtime deps, listed here because it installs with --no-deps
+numba==0.68.0
+qpsolvers[quadprog]==4.13.0
+pillow==12.3.0
+termcolor==3.3.0
+tqdm==4.70.1
+pynput==1.8.2
 
 # Testing / lint
-pytest>=8.0
+pytest==9.1.1
 ruff>=0.4

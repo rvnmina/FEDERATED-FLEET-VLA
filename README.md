@@ -24,7 +24,7 @@ The scientific contribution is the **payload-versus-accuracy tradeoff curves** t
 | **M3** | Federated layer under IoT constraints | 5–6 weeks | Payload-vs-accuracy curves under bandwidth caps / staleness / dropout / energy budgets |
 | **M4** | Split-inference on the VLA action head | 4–6 weeks | Workshop-paper-sized result (CoRL / ICRA / IROS target) |
 
-Instrumentation is standard from day one: wall-clock per step, memory, and — critically — parameter payload size (the currency in M3).
+Instrumentation is standard from day one: wall-clock per step, memory, and — critically — parameter payload size (the currency in M3). See [`src/utils/instrument.py`](src/utils/instrument.py): every run writes `run_info.json` (seed, git commit, library versions) and `metrics.jsonl` (per-step `wall_s`, `rss_bytes`, payload bytes).
 
 ---
 
@@ -63,9 +63,11 @@ federated-fleet-vla-iot/
 ## Quick start
 
 ```bash
-# 1. Environment
-python -m venv .venv && source .venv/bin/activate
+# 1. Environment (Python 3.12; on Apple Silicon use an arm64 Python, e.g. from Homebrew)
+python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+pip install --no-deps -r requirements-sim.txt   # robosuite; see note in requirements.txt
+pytest -q                                        # instrumentation + seeding tests
 
 # 2. Reproduce M1 single-robot baseline
 python scripts/run_baseline.py --config configs/single_robot.yaml
