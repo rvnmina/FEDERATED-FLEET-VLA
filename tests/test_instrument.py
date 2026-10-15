@@ -37,7 +37,8 @@ def test_state_delta_is_new_minus_old():
         m[1].weight.add_(1.0)
     delta = state_delta(m.state_dict(), old, only=trainable_keys(m))
     assert set(delta) == {"1.weight", "1.bias"}
-    assert torch.all(delta["1.weight"] == 1.0)
+    assert torch.allclose(
+        delta["1.weight"], torch.ones_like(delta["1.weight"]))
     assert torch.all(delta["1.bias"] == 0.0)
 
 
@@ -58,7 +59,8 @@ def test_run_logger_writes_jsonl_and_run_info(tmp_path):
     assert info["seed"] == 7 and info["task"] == "Lift"
     assert "torch" in info["versions"]
 
-    lines = [json.loads(x) for x in (tmp_path / "metrics.jsonl").read_text().splitlines()]
+    lines = [json.loads(x) for x in (
+        tmp_path / "metrics.jsonl").read_text().splitlines()]
     assert lines[0]["phase"] == "train" and lines[0]["loss"] == 0.5
     assert lines[0]["wall_s"] >= 0 and lines[0]["rss_bytes"] > 0
     assert lines[1] == {"t": lines[1]["t"], "phase": "payload", "bytes": 123}
