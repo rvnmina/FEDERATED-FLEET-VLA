@@ -1,0 +1,9 @@
+# M1 single-robot baseline. One config fully describes one run.
+task: lift              # lift | stack | door | nut_assembly
+robot: Panda
+seed: 0
+horizon: 200            # max steps per episode
+control_freq: 20
+n_episodes: 10          # episodes to evaluate
+policy: random          # random | zero  (SmolVLA arrives on Day 6)
+run_dir: results/lift_random_seed0
