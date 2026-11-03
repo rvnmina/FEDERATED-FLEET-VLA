@@ -57,3 +57,4 @@ Every checkbox is one commit's worth of work. Push at the end of each day.
 [area] short imperative — one line
 ```
 e.g., `[federated] FedAvg parity test — trivial case matches centralised`
+- [x] Day 07a — observation adapter
