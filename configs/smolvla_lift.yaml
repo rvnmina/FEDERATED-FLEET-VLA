@@ -1,0 +1,19 @@
+# SmolVLA rollout on the Lift task.
+# Run:  python -m scripts.run_rollout --config configs/smolvla_lift.yaml
+
+task: lift
+robot: Panda
+seed: 0
+horizon: 50
+control_freq: 20
+n_episodes: 2
+policy: smolvla
+run_dir: results/smolvla_lift
+cameras:
+  - agentview
+  - robot0_eye_in_hand
+camera_size: 128
+checkpoint: lerobot/smolvla_base
+device: cpu
+task_prompt: "Pick up the red cube from the table."
+n_action_steps: 10
