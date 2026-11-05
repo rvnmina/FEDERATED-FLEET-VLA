@@ -7,7 +7,7 @@ Every checkbox is one commit's worth of work. Push at the end of each day.
 - [x] Day 01 — Repo bootstrap: LICENSE, .gitignore, requirements.txt, empty test hits
 - [ ] Day 02 — Install MuJoCo 3.9 + robosuite 1.5.2 on Mac; verify with viewer smoke test
 - [ ] Day 03 — Add `src/fleet/simulator.py` — wrap robosuite `SingleArmEnv` with seedable reset
-- [x] Day 04 — Add `src/utils/seed.py` and `src/utils/instrument.py` — fixed seeds; JSONL metrics (wall-clock, memory, payload bytes)
+- [x] Day 04 — Add `src/utils/seed.py` and `src/utils/run_logger.py` — fixed seeds; JSONL metrics (wall-clock, memory, payload bytes)
 - [ ] Day 05 — Add `configs/single_robot.yaml` + `scripts/run_baseline.py` — CLI that loads one task
 - [ ] Day 06 — Install LeRobot + SmolVLA; `src/policy/smolvla_wrapper.py` — load, forward, save
 - [ ] Day 07 — First end-to-end rollout on one manipulation task, log success rate

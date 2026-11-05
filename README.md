@@ -24,7 +24,7 @@ The scientific contribution is the **payload-versus-accuracy tradeoff curves** t
 | **M3** | Federated layer under IoT constraints | 5–6 weeks | Payload-vs-accuracy curves under bandwidth caps / staleness / dropout / energy budgets |
 | **M4** | Split-inference on the VLA action head | 4–6 weeks | Workshop-paper-sized result (CoRL / ICRA / IROS target) |
 
-Instrumentation is standard from day one: wall-clock per step, memory, and — critically — parameter payload size (the currency in M3). See [`src/utils/instrument.py`](src/utils/instrument.py): every run writes `run_info.json` (seed, git commit, library versions) and `metrics.jsonl` (per-step `wall_s`, `rss_bytes`, payload bytes).
+Instrumentation is standard from day one: wall-clock per step, memory, and — critically — parameter payload size (the currency in M3). See [`src/utils/run_logger.py`](src/utils/run_logger.py): every run writes `run_info.json` (seed, git commit, library versions) and `metrics.jsonl` (per-step `wall_s`, `rss_bytes`, payload bytes).
 
 ---
 
